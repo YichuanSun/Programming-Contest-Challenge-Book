@@ -28,6 +28,7 @@ void bfs()	{
 	int sx=1,sy=1;
 	int movx[4]={1,0,-1,0},movy[4]={0,1,0,-1};
 	dis[1][1]=point(sx,sy,-1,-1);
+	spot[1][1]=true;
 	que.push(point(sx,sy,-1,-1));
 	while (que.size())	{
 		point P=que.front();
@@ -45,8 +46,7 @@ void bfs()	{
 }
 void print()	{
 	int i=5,j=5;
-	printf("(0, 0)\n");
-	while (dis[i][j].x!=1||dis[i][j].y!=1)	{
+	while (i!=-1&&j!=-1)	{
 		sta.push(dis[i][j]);
 		int inii=i,inij=j;
 		i=dis[inii][inij].prex;
